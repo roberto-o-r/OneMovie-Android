@@ -1,5 +1,5 @@
 # One Movie App
 
-https://play.google.com/store/apps/details?id=com.isscroberto.dailyprayerandroid
+https://play.google.com/store/apps/details?id=com.isscroberto.onemovie
 
-Daily Prayer gives you prayers of comfort, courage, and hope for every day of the year, each with a corresponding verse from the Bible.
+Good movies are hard to find. Get a random movie for those moments when you want to watch one but you don't know which.
