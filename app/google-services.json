@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1010248619051",
+    "firebase_url": "https://onemovie-android.firebaseio.com",
+    "project_id": "onemovie-android",
+    "storage_bucket": "onemovie-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010248619051:android:31f8fb983e8676f8",
+        "android_client_info": {
+          "package_name": "com.isscroberto.onemovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010248619051-sqo6johcirr65budn2mkk3pd1bcprqpo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.isscroberto.onemovie",
+            "certificate_hash": "14f1df60324012d1b3fad923ebc1d4726bbcf9ff"
+          }
+        },
+        {
+          "client_id": "1010248619051-bgthp568ltmu5d8q5lv9d37aioh6ckhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_FR6IfGYzgkg78X9GqihuOVCVvTkQ1Qs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010248619051-bgthp568ltmu5d8q5lv9d37aioh6ckhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

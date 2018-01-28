@@ -1,0 +1,10 @@
+<tabs>
+    <tab
+        id="@+id/tab_movie"
+        icon="@drawable/ic_movie_black_24dp"
+        title="OneMovie" />
+    <tab
+        id="@+id/tab_filter"
+        icon="@drawable/ic_filter_list_black_24dp"
+        title="Filter" />
+</tabs>
