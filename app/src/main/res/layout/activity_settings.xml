@@ -94,6 +94,20 @@
                 android:layout_weight="1"
                 android:src="@drawable/daily_bible_logo" />
 
+            <ImageView
+                android:id="@+id/image_daily_reflection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/daily_reflection_logo" />
+
+            <ImageView
+                android:id="@+id/image_one_breath"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/one_breath_logo" />
+
         </LinearLayout>
     </LinearLayout>
 
