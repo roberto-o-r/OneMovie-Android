@@ -1,4 +1,4 @@
-# One Movie App
+# One Movie
 
 https://play.google.com/store/apps/details?id=com.isscroberto.onemovie
 
