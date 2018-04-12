@@ -2,4 +2,4 @@
 
 https://play.google.com/store/apps/details?id=com.isscroberto.onemovie
 
-Good movies are hard to find. Get a random movie for those moments when you want to watch one but you don't know which.
+One Movie it’s an Android app that helps you discover random movies based on a filter of what you’d like to watch.
