@@ -57,6 +57,14 @@
             android:layout_height="50dp"
             android:src="@drawable/movie_logo" />
 
+        <TextView
+            android:id="@+id/text_privacy_policy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Privacy Policy"
+            android:textAlignment="center" />
+
     </LinearLayout>
 
     <LinearLayout

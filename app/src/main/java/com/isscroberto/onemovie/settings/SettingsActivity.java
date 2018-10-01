@@ -54,4 +54,9 @@ public class SettingsActivity extends AppCompatActivity {
     public void imageOneBreathOnClick(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.isscroberto.onebreath")));
     }
+
+    @OnClick(R.id.text_privacy_policy)
+    public void textPrivacyPolicy(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://isscroberto.com/daily-bible-privacy-policy/")));
+    }
 }
