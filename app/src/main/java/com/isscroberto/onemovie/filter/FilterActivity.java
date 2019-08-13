@@ -2,18 +2,13 @@ package com.isscroberto.onemovie.filter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SwitchCompat;
+import androidx.appcompat.widget.SwitchCompat;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.SeekBar;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appyvet.materialrangebar.RangeBar;
@@ -22,14 +17,10 @@ import com.isscroberto.onemovie.data.models.Filter;
 import com.isscroberto.onemovie.data.models.Genre;
 import com.isscroberto.onemovie.data.models.Language;
 import com.isscroberto.onemovie.data.source.remote.MovieRemoteDataSource;
-import com.isscroberto.onemovie.movie.MovieContract;
 import com.jaredrummler.materialspinner.MaterialSpinner;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
