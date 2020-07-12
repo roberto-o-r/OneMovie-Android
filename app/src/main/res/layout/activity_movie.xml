@@ -314,16 +314,6 @@
         app:layout_anchor="@id/main.appbar"
         app:layout_anchorGravity="bottom|right|end" />
 
-    <!-- Banner Ad. -->
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ad_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:visibility="gone"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/ad_unit_id"/>
-
     <!-- Progress. -->
     <RelativeLayout
         android:id="@+id/layout_progress"
@@ -340,5 +330,15 @@
             android:layout_centerInParent="true" />
 
     </RelativeLayout>
+
+    <!-- Banner Ad. -->
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_id"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
