@@ -7,8 +7,8 @@ android {
         applicationId "com.isscroberto.onemovie"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 6
-        versionName "18.10.01"
+        versionCode 7
+        versionName "20.07.11"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
