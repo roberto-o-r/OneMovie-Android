@@ -43,7 +43,7 @@ public class MoviePresenter implements MovieContract.Presenter  {
     public void loadMovie() {
         mMovieView.setLoadingIndicator(true);
 
-        getRandomMovie(1000);
+        getRandomMovie(500);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MoviePresenter implements MovieContract.Presenter  {
             @Override
             public void onResponse(Call<TmdbResponse> call, Response<TmdbResponse> response) {
                 // Verify if query contains results.
-                if(response.body().getTotal_results() > 0) {
+                if(response.body() != null && response.body().getTotal_results() > 0) {
                     // Verify if current page contains results.
                     if(response.body().getResults().size() == 0) {
                         // Try again with max page limit.
