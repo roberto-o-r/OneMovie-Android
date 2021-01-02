@@ -17,7 +17,7 @@ public interface MovieContract {
         void showMessage(String message);
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter<View> {
         void loadMovie();
         void getPoster();
     }
