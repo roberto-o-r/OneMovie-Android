@@ -3,27 +3,21 @@ package com.isscroberto.onemovie.movie;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
+import android.view.View;
 
-import com.github.chrisbanes.photoview.PhotoView;
-import com.isscroberto.onemovie.R;
+import com.isscroberto.onemovie.databinding.ActivityMoviePhotoBinding;
 import com.squareup.picasso.Picasso;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MoviePhotoActivity extends AppCompatActivity {
-
-    @BindView(R.id.photo_movie)
-    PhotoView photoMovie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_photo);
 
-        // Bind views with Butter Knife.
-        ButterKnife.bind(this);
+        // Binding.
+        com.isscroberto.onemovie.databinding.ActivityMoviePhotoBinding binding = ActivityMoviePhotoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         // Setup toolbar.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -34,7 +28,7 @@ public class MoviePhotoActivity extends AppCompatActivity {
         String url = intent.getStringExtra("Url");
 
         // Set url.
-        Picasso.with(this).load("https://image.tmdb.org/t/p/w500" + url).fit().centerInside().into(photoMovie);
+        Picasso.with(this).load("https://image.tmdb.org/t/p/w500" + url).fit().centerInside().into(binding.photoMovie);
 
     }
 

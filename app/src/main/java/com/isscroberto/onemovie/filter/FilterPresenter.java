@@ -2,6 +2,8 @@ package com.isscroberto.onemovie.filter;
 
 import android.content.SharedPreferences;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.Gson;
 import com.isscroberto.onemovie.data.models.Filter;
 import com.isscroberto.onemovie.data.models.Language;
@@ -10,16 +12,11 @@ import com.isscroberto.onemovie.data.source.remote.MovieRemoteDataSource;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.jar.Attributes;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by roberto.orozco on 24/10/2017.
@@ -27,16 +24,15 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class FilterPresenter implements FilterContract.Presenter {
 
-    private final FilterContract.View mFilterView;
-    private Filter mFilter;
-    private SharedPreferences mSharedPreferences;
+    private FilterContract.View mView;
+    private final SharedPreferences mSharedPreferences;
     private final MovieRemoteDataSource mMovieRemoteDataSource;
-    private List<Language> languages = new ArrayList<Language>();
-    private List<String> years = new ArrayList<>();
+    private final List<Language> languages = new ArrayList<>();
+    private final List<String> years = new ArrayList<>();
 
     public FilterPresenter(MovieRemoteDataSource movieRemoteDataSource, FilterContract.View filterView, SharedPreferences sharedPreferences) {
         mMovieRemoteDataSource = movieRemoteDataSource;
-        mFilterView = filterView;
+        mView = filterView;
         mSharedPreferences = sharedPreferences;
 
         languages.add(new Language("All", ""));
@@ -54,29 +50,29 @@ public class FilterPresenter implements FilterContract.Presenter {
         // Populate years.
         years.add("All");
         int year = Calendar.getInstance().get(Calendar.YEAR);
-        for(int i = year; i > year - 100; i--) {
+        for (int i = year; i > year - 100; i--) {
             years.add("" + i);
         }
-
-        mFilterView.setPresenter(this);
     }
 
     @Override
-    public void start() {
+    public void takeView(FilterContract.View view) {
+        this.mView = view;
+
         // Set loading indicator.
-        mFilterView.setLoadingIndicator(true);
+        mView.setLoadingIndicator(true);
 
         // Get genres from api.
         getGenres();
 
         // Show languages.
-        mFilterView.showLanguages(languages);
+        mView.showLanguages(languages);
 
         // Show years.
-        mFilterView.showYears(years);
+        mView.showYears(years);
 
         // Load saved filter if exists.
-        mFilter = new Filter();
+        Filter mFilter = new Filter();
         String json = mSharedPreferences.getString("Filter", "");
         if (!json.isEmpty()) {
             Gson gson = new Gson();
@@ -84,7 +80,12 @@ public class FilterPresenter implements FilterContract.Presenter {
         }
 
         // Show filter in view.
-        mFilterView.showFilter(mFilter);
+        mView.showFilter(mFilter);
+    }
+
+    @Override
+    public void dropView() {
+        this.mView = null;
     }
 
     @Override
@@ -94,24 +95,23 @@ public class FilterPresenter implements FilterContract.Presenter {
         Gson gson = new Gson();
         String json = gson.toJson(filter);
         prefsEditor.putString("Filter", json);
-        prefsEditor.commit();
+        prefsEditor.apply();
     }
 
     @Override
     public void getGenres() {
-        mMovieRemoteDataSource.getGenres(new Callback<TmdbResponse>(){
+        mMovieRemoteDataSource.getGenres(new Callback<TmdbResponse>() {
             @Override
-            public void onResponse(Call<TmdbResponse> call, Response<TmdbResponse> response) {
-                mFilterView.showGenres(response.body().getGenres());
-                mFilterView.setLoadingIndicator(false);
+            public void onResponse(@NonNull Call<TmdbResponse> call, @NonNull Response<TmdbResponse> response) {
+                mView.showGenres(response.body().getGenres());
+                mView.setLoadingIndicator(false);
             }
 
             @Override
-            public void onFailure(Call<TmdbResponse> call, Throwable t) {
-                mFilterView.setLoadingIndicator(false);
-                mFilterView.showError();
+            public void onFailure(@NonNull Call<TmdbResponse> call, @NonNull Throwable t) {
+                mView.setLoadingIndicator(false);
+                mView.showError();
             }
         });
     }
-
 }

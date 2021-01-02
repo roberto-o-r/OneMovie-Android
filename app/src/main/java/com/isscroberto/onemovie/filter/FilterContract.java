@@ -24,7 +24,7 @@ public interface FilterContract {
         void showError();
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter<View> {
         void saveFilter(Filter filter);
         void getGenres();
     }

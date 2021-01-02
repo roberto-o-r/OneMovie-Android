@@ -62,8 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="60dp"
-            android:paddingTop="8dp">
+            android:paddingTop="8dp"
+            android:paddingBottom="60dp">
 
             <!-- Feedback. -->
             <com.github.stkent.amplify.prompt.DefaultLayoutPromptView
@@ -76,9 +76,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -104,9 +104,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -137,9 +137,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -170,9 +170,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -203,9 +203,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -236,9 +236,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -269,9 +269,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 card_view:cardBackgroundColor="@color/white"
                 card_view:cardCornerRadius="4dp">
 
@@ -291,10 +291,10 @@
                         android:id="@+id/text_more"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/Subheading"
+                        android:clickable="true"
                         android:text="Go to IMDB"
-                        android:textColor="@color/colorPrimary"
-                        android:clickable="true"/>
+                        android:textAppearance="@style/Subheading"
+                        android:textColor="@color/colorPrimary" />
 
                 </LinearLayout>
 
@@ -332,13 +332,22 @@
     </RelativeLayout>
 
     <!-- Banner Ad. -->
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ad_view"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ad_wrapper"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:visibility="gone"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/ad_unit_id"/>
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:visibility="gone">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ad_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/ad_unit_id" />
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
