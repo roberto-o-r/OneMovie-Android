@@ -19,10 +19,7 @@ public class SettingsActivity extends AppCompatActivity {
         com.isscroberto.onemovie.databinding.ActivitySettingsBinding binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        binding.imageDailyPrayer.setOnClickListener(this::imageDailyPrayerOnClick);
-        binding.imageDailyBible.setOnClickListener(this::imageDailyBibleOnClick);
-        binding.imageDailyReflection.setOnClickListener(this::imageDailyReflectionOnClick);
-        binding.imageOneBreath.setOnClickListener(this::imageOneBreathOnClick);
+        binding.textMoreApps.setOnClickListener(this::textMoreAppsOnClick);
         binding.textPrivacyPolicy.setOnClickListener(this::textPrivacyPolicyOnClick);
 
         // Setup toolbar.
@@ -38,20 +35,8 @@ public class SettingsActivity extends AppCompatActivity {
         return true;
     }
 
-    public void imageDailyPrayerOnClick(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.isscroberto.dailyprayerandroid")));
-    }
-
-    public void imageDailyBibleOnClick(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.isscroberto.dailybibleandroid")));
-    }
-
-    public void imageDailyReflectionOnClick(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.isscroberto.dailyreflectionandroid")));
-    }
-
-    public void imageOneBreathOnClick(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.isscroberto.onebreath")));
+    public void textMoreAppsOnClick(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:isscroberto")));
     }
 
     public void textPrivacyPolicyOnClick(View view) {

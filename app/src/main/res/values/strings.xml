@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">OneMovie</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_eunoia">eunoia</string>
+    <string name="all_one_movie_logo">One Movie Logo</string>
+    <string name="app_name">One Movie</string>
+    <string name="settings_by">by</string>
+    <string name="settings_privacy">Privacy Policy</string>
+    <string name="settings_powered_by">Powered by</string>
+    <string name="settings_other_apps">More apps by euronia</string>
 </resources>
