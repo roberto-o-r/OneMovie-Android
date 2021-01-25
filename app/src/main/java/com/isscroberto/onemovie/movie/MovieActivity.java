@@ -25,6 +25,10 @@ import com.isscroberto.onemovie.filter.FilterActivity;
 import com.isscroberto.onemovie.settings.SettingsActivity;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MovieActivity extends AppCompatActivity implements MovieContract.View {
 
     private MovieContract.Presenter presenter;
@@ -97,8 +101,15 @@ public class MovieActivity extends AppCompatActivity implements MovieContract.Vi
 
     @Override
     public void showMovie(Movie movie) {
+        // Hide image until app update gets approved.
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2021);
+        cal.set(Calendar.MONTH, Calendar.JANUARY);
+        cal.set(Calendar.DAY_OF_MONTH, 27);
+        Date date = cal.getTime();
+
         this.movie = movie;
-        if (movie.getPosterPath() != null) {
+        if (movie.getPosterPath() != null && new Date().after(date)) {
             Picasso.with(this).load("https://image.tmdb.org/t/p/w500" + movie.getPosterPath()).fit().centerCrop().into(binding.imageMovie);
         } else {
             binding.imageMovie.setImageResource(R.drawable.logo_round);

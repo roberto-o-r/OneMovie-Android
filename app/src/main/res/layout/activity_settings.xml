@@ -1,56 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="16dp"
+            android:contentDescription="@string/all_one_movie_logo"
             android:src="@drawable/logo_round" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="One Movie"
+            android:text="@string/app_name"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="by"
+            android:text="@string/settings_by"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
             android:layout_marginTop="10sp"
-            android:text="\@isscroberto &amp; \@BereElias"
+            android:layout_marginBottom="32dp"
+            android:text="@string/all_eunoia"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Powered by"
+            android:text="@string/settings_powered_by"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"  />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -62,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Privacy Policy"
+            android:text="@string/settings_privacy"
             android:textAlignment="center" />
 
     </LinearLayout>
@@ -74,49 +73,13 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textMoreApps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32sp"
-            android:text="other apps:"
+            android:text="@string/settings_other_apps"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/image_daily_prayer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/daily_prayer_logo" />
-
-            <ImageView
-                android:id="@+id/image_daily_bible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/daily_bible_logo" />
-
-            <ImageView
-                android:id="@+id/image_daily_reflection"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/daily_reflection_logo" />
-
-            <ImageView
-                android:id="@+id/image_one_breath"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/one_breath_logo" />
-
-        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
